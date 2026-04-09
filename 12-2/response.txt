@@ -1,0 +1,6 @@
+Although it seems reasonable for std::sort to work on std::list, it dosen't work because 
+std::sort expects random-access iterators but linked lists only have bidirectional 
+iterators. The simplest way that we could implement this is by writing a template method 
+that accepts std::list arguments, copies all of the list's elements to a vector and then
+calls std::sort on the vector before converting the vector back to a list and returning
+it. However, this requires allocating more memory which could potentially be improved.
